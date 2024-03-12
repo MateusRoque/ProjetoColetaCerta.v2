@@ -1,17 +1,19 @@
 // FirstScreen.js
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Image, StatusBar } from 'react-native';
 
 export function FirstScreen() {
   const navigation = useNavigation();
 
   const goToNextScreen = () => {
-    navigation.navigate('a');
+    navigation.navigate('Home');
   }
 
   return (
+   
     <View style={styles.container}>
+       <StatusBar backgroundColor="green"/> 
       <View style={styles.imageContainer}>
         <Image source={require("../src/assets/logo-sem-fundo-red.png")} style={styles.logo} resizeMode="contain"/>
       </View>
@@ -21,7 +23,7 @@ export function FirstScreen() {
         <Text style={styles.paragraph}>A ColetaCerta tem como objetivo
         conectar você com o município. Notificamos sobre o horário da coleta seletiva e também recebemos reclamações do município, sejam elas desobstrução de bueiros, etc...
         </Text>
-        
+
         <TouchableOpacity onPress={goToNextScreen}>
           <Text style={styles.paragraphLink}>
             Clique aqui para começar
@@ -36,7 +38,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-
+    gap: 15
 
   }, 
   imageContainer: {
