@@ -1,9 +1,8 @@
-// FirstScreen.js
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image, StatusBar } from 'react-native';
 
-export function FirstScreen() {
+export default function WelcomePage() {
   const navigation = useNavigation();
 
   const goToNextScreen = () => {
@@ -11,9 +10,8 @@ export function FirstScreen() {
   }
 
   return (
-   
     <View style={styles.container}>
-       <StatusBar backgroundColor="green"/> 
+      <StatusBar backgroundColor="green"/> 
       <View style={styles.imageContainer}>
         <Image source={require("../src/assets/logo-sem-fundo-red.png")} style={styles.logo} resizeMode="contain"/>
       </View>
@@ -31,8 +29,8 @@ export function FirstScreen() {
         </TouchableOpacity>
       </View>
     </View>
- 
-    )};
+  )
+};
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -43,30 +41,25 @@ const styles = StyleSheet.create({
   }, 
   imageContainer: {
     justifyContent: "center",
-    alignItems: "center",
+    alignItems: "center"
   },
   image: {
-    backgroundColor: "blue",
+    backgroundColor: "blue"
   },
   paragraphContainer: {
     flex: 0.6,
     alignItems: "center",
     rowGap: 30,
-    justifyContent: "center",
-    
+    justifyContent: "center"
   },
   paragraph: {
     fontSize: 18,
     width:300,
-    textAlign: 'justify',
-
+    textAlign: 'justify'
   },
   paragraphLink: {
     fontSize: 19,
     fontWeight: "bold",
     color: "green"
-
   }
-
 })
-export default FirstScreen;
