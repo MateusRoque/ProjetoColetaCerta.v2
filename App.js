@@ -1,7 +1,7 @@
 import { WelcomePage } from './screens/welcomepage';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import Home from './screens/home'; // Crie este componente
+import { Home } from './screens/home';
 
 const Stack = createStackNavigator();
 
