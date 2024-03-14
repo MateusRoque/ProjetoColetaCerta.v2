@@ -1,18 +1,9 @@
-import { WelcomePage } from './screens/welcomepage';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { Home } from './screens/home';
+import { StatusBar } from "expo-status-bar";
+import Auth from "./src/routes/routes";
 
-const Stack = createStackNavigator();
-
-export default function App() {
+export default function App(){
   return (
-    <NavigationContainer>
-      <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen name="WelcomePage" component={WelcomePage} />
-        <Stack.Screen name="Home" component={Home} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Auth/>
   );
-}
+};
 
