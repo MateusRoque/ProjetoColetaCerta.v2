@@ -1,12 +1,10 @@
-import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 
-import { View, Text, TouchableOpacity, Image, StatusBar } from 'react-native';
+import { View, Text, TouchableOpacity, Image, StatusBar,} from 'react-native';
 
 import welcomeStyles from './styles';
 
 function WelcomePage({navigation}){
-
   return (
     <View style={welcomeStyles.container}>
       <StatusBar backgroundColor="green"/> 
@@ -20,7 +18,7 @@ function WelcomePage({navigation}){
         conectar você com o município. Notificamos sobre o horário da coleta seletiva e também recebemos reclamações do município, sejam elas desobstrução de bueiros, etc...
         </Text>
 
-        <TouchableOpacity onPress={() => navigation.navigate('Login')}> 
+        <TouchableOpacity onPress={() => {navigation.replace("Signin")}}> 
           <Text style={welcomeStyles.paragraphLink}>
             Clique aqui para começar
           </Text>

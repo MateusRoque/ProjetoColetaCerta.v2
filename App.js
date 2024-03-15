@@ -1,5 +1,4 @@
-import { StatusBar } from "expo-status-bar";
-import Auth from "./src/routes/routes";
+import Auth from "./src/routes";
 
 export default function App(){
   return (
