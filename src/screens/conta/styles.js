@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet } from "react-native";
 import colors from "../../colors/colors";
 
-const denunciaStyles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
@@ -12,4 +12,4 @@ const denunciaStyles = StyleSheet.create({
 
 })
 
-export default denunciaStyles;
+export default styles;

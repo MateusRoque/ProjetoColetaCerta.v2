@@ -3,11 +3,12 @@ import React from 'react';
 import { View, Text, TouchableOpacity, Image, StatusBar,} from 'react-native';
 
 import welcomeStyles from './styles';
+import colors from '../../colors/colors';
 
 function WelcomePage({navigation}){
   return (
     <View style={welcomeStyles.container}>
-      <StatusBar backgroundColor="green"/> 
+      <StatusBar backgroundColor={colors.outroVerd} barStyle={'dark-content'}/> 
       <View style={welcomeStyles.imageContainer}>
         <Image source={require("../../assets/logo-sem-fundo-red.png")} style={welcomeStyles.logo}/>
       </View>

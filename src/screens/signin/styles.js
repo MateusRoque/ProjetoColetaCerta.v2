@@ -73,6 +73,8 @@
 // export default styles;]
 
 import { StyleSheet } from 'react-native';
+import colors from "../../colors/colors";
+
 
 export default StyleSheet.create({
     container: {
@@ -81,6 +83,7 @@ export default StyleSheet.create({
         justifyContent: "center",
         height: "100%",
         width: "100%",
+        backgroundColor: colors.white
     },
     formContainer: {
         flex: 1,
@@ -88,7 +91,6 @@ export default StyleSheet.create({
         alignItems: "center",
         height: "100%",
         width: "100%",
-        marginBottom: "20%", 
         flexDirection: "row"
     },
     passwordContainer: {
@@ -113,27 +115,33 @@ export default StyleSheet.create({
         borderRadius: 5,
         width: "90%",
         marginLeft: 20,
-        paddingLeft: 10,
-        backgroundColor: 'white',
+        paddingLeft: 20,
+        backgroundColor: colors.whiteF2,
         marginTop: 10,
         marginBottom: 10,
+        // borderBottomWidth: 3,
+        borderRadius: 30,
+        // borderColor: colors.outroVerd
     },
     inputPwd: {
         height: 48,
         borderRadius: 5,
         width: "100%",
-        paddingLeft: 10,
-        backgroundColor: 'white',
+        paddingLeft: 20,
+        backgroundColor: colors.whiteF2,
         marginTop: 10,
         marginBottom: 10,
+        // borderBottomWidth: 3,
+        borderRadius: 30,
+        // borderColor: colors.outroVerd
     },
     button: {
-        backgroundColor: 'green',
+        backgroundColor: colors.outroVerd,
         marginLeft: "30%",
         marginRight: "30%",
         marginTop: 10,
         height: 48,
-        borderRadius: 5,
+        borderRadius: 30,
         alignItems: "center",
         justifyContent: 'center'
     },
@@ -149,10 +157,10 @@ export default StyleSheet.create({
     },
     footerText: {
         fontSize: 16,
-        color: '#2e2e2d'
+        color:"#2e2e2d"
     },
     footerLink: {
-        color: "green",
+        color: colors.secondary,
         fontWeight: "bold",
         fontSize: 16
     }

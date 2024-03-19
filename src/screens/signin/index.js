@@ -4,7 +4,7 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import styles from './styles';
 import { Ionicons } from "@expo/vector-icons";
 import { StatusBar } from 'expo-status-bar';
-
+import colors from '../../colors/colors';
 export default function Signin({navigation}) {
   const [fullName, setFullName] = useState('')
   const [email, setEmail] = useState('')
@@ -15,7 +15,7 @@ export default function Signin({navigation}) {
   const [changeName, setNameIcon] = useState("eye");
   const [changeNameConfirmPwd, setNameIconConfirmPwd] = useState("eye");
   const [hidePasswordPwd, setHidePasswordPwd] = useState(true);
-  const [setBairro] = useState('');
+  const [bairro,setBairro] = useState('');
 
   const onFooterLinkPress = () => {
       navigation.navigate('Login')
@@ -52,7 +52,7 @@ export default function Signin({navigation}) {
 
   return (
     <View style={styles.container}>
-        <StatusBar backgroundColor='green'/>
+        <StatusBar backgroundColor={colors.outroVerd}/>
         <View  style={styles.formContainer}>
         
             <KeyboardAwareScrollView
@@ -104,7 +104,7 @@ export default function Signin({navigation}) {
                         autoCapitalize="none"
                   />
                   <TouchableOpacity style={styles.iconEye}  onPress={handleEyeClick}>
-                    <Ionicons name={changeName} color="black" size={25}
+                    <Ionicons name={changeName} color={colors.secondary}size={25}
                     />
                   </TouchableOpacity>
                 </View> 
@@ -121,7 +121,7 @@ export default function Signin({navigation}) {
                     autoCapitalize="none"
                   />
                   <TouchableOpacity style={styles.iconEye}  onPress={handleEyeClickConfirmPwd}>
-                    <Ionicons name={changeNameConfirmPwd} color="black" size={25}
+                    <Ionicons name={changeNameConfirmPwd} color={colors.secondary} size={25}
                   />
                   </TouchableOpacity>
                 </View> 

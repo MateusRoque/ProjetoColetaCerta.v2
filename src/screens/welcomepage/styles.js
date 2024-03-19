@@ -1,21 +1,20 @@
 import React from "react";
 import { StyleSheet } from "react-native";
-
+import colors from "../../colors/colors";
+import { StatusBar } from "expo-status-bar";
 
 const welcomeStyles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    gap: 15,
-
+    gap: 30,
+    paddingTop: StatusBar.currentHeight 
   }, 
   imageContainer: {
     justifyContent: "center",
     alignItems: "center",
     width: "100%",
-  },
-  logo: {  
   },
   paragraphContainer: {
     flex: 0.6,
@@ -32,7 +31,7 @@ const welcomeStyles = StyleSheet.create({
   paragraphLink: {
     fontSize: 19,
     fontWeight: "bold",
-    color: "green"
+    color: colors.outroVerd
   }
 })
 
