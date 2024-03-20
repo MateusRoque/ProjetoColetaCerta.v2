@@ -9,6 +9,10 @@ const homeStyles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: colors.white
 
+  },
+  safe: {
+    height: "100%",
+    backgroundColor: colors.whiteF2
   }
 })
 

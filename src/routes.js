@@ -8,10 +8,13 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import { Ionicons, AntDesign, FontAwesome  } from '@expo/vector-icons';
+import styles from './screens/styles/iconStyle';
 import colors from './colors/colors';
 import Teste from './screens/teste';
 import Teste2 from './screens/teste2';
 import Account from './screens/conta';
+import { View } from 'react-native';
+
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -67,14 +70,13 @@ function HomeScreen() {
           tabBarStyle: {
             borderTopColor: colors.whiteF2
           },
-          title: 'Denúncia',
           tabBarInactiveTintColor: colors.dark,
           tabBarActiveTintColor: colors.outroVerd,
           tabBarIcon: ({ focused, size }) => {
             if (focused) {
-              return <AntDesign size={size} color={colors.outroVerd} name='plus' />
+              return <View  style={styles.plus}><AntDesign size={size} color={colors.white} name='plus'/></View>
             }
-            return <AntDesign size={size} color={colors.dark} name='plus' />
+            return <View style={styles.plus}><AntDesign size={size} color={colors.dark} name='plus' /></View>
           }
         }}
       />

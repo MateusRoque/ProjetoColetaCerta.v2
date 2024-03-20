@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { View, Text, TouchableOpacity, Image, TextInput} from "react-native";
-import styles from "./styles";
+import { View, Text, TouchableOpacity, Image, TextInput, SafeAreaView} from "react-native";
+import styles from "../styles/formStyles";
 import { Ionicons } from "@expo/vector-icons";
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import colors from "../../colors/colors";
+import { StatusBar } from "expo-status-bar";
 
 function Login({navigation}){
   const [userName, setName] = useState('');
@@ -12,11 +14,9 @@ function Login({navigation}){
   const [changeName, setNameIcon] = useState("eye");
   const [password, setPassword] = useState('')
 
-  const color = "black";
-
   const handleLoginUser = () => {
     // Fazer a validação,
-    return navigation.replace('HomeScreen');
+    navigation.replace('HomeScreen');
   }
 
   const onFooterLinkPress = () => {
@@ -29,14 +29,14 @@ function Login({navigation}){
     changeName == "eye" ? setNameIcon("eye-off") : setNameIcon("eye")
   }
   return(
+    <SafeAreaView style={styles.safe}>
+    <StatusBar backgroundColor={colors.whiteF2} barStyle={'dark-content'}/> 
     <View style={styles.container}>
-      <View style={styles.loginContainer}>    
+      <View style={styles.formContainer}>    
         <KeyboardAwareScrollView
           keyboardShouldPersistTaps="always">
-          <Image
-              style={styles.logo}
-              source={require("../../assets/logo-sem-fundo-red.png")}
-          />
+                <Text style={styles.logo}>COLETA CERTA</Text>
+
           <TextInput
             style={styles.input}
             onChangeText={(text) => setName(text)}
@@ -65,7 +65,7 @@ function Login({navigation}){
               autoCapitalize="none"
             />
             <TouchableOpacity style={styles.iconEye}  onPress={handleEyeClick}>
-              <Ionicons name={changeName} color={color} size={25}
+              <Ionicons name={changeName} color={colors.outroVerd} size={25}
               />
             </TouchableOpacity>
           </View>      
@@ -84,6 +84,7 @@ function Login({navigation}){
       </View>
       
     </View>
+    </SafeAreaView>
   );
 }
 
