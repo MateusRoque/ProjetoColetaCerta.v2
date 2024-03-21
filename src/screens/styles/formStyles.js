@@ -19,6 +19,7 @@ export default StyleSheet.create({
         shadowOpacity: 0.5,
         shadowRadius: 10,
     },
+
     formContainer: {
         flex: 1,
         justifyContent: 'center',
@@ -59,6 +60,7 @@ export default StyleSheet.create({
         width: "90%",
         marginLeft: 20,
         paddingLeft: 20,
+        paddingRight: 20,
         backgroundColor: colors.whiteF2,
         marginTop: 10,
         marginBottom: 10,
@@ -71,6 +73,7 @@ export default StyleSheet.create({
         height: 48,
         width: "100%",
         paddingLeft: 20,
+        paddingRight: 40,
         backgroundColor: colors.whiteF2,
         marginTop: 10,
         marginBottom: 10,
