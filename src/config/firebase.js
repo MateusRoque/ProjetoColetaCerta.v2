@@ -1,16 +1,27 @@
-import { initializeApp } from "firebase/app";
+import { initializeApp, getApp } from "firebase/app";
+import { initializeAuth, getAuth, getReactNativePersistence } from 'firebase/auth';
+import ReactNativeAsyncStorage from '@react-native-async-storage/async-storage';
+import { getFirestore } from "firebase/firestore";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyBfKQNpqMVw5o3benOSKbC9zfSlaz-thoE",
-  authDomain: "coletacerta-707cc.firebaseapp.com",
-  projectId: "coletacerta-707cc",
-  storageBucket: "coletacerta-707cc.appspot.com",
-  messagingSenderId: "5030532915",
-  appId: "1:5030532915:web:ffe570be72bb0a749d5046",
-  measurementId: "G-FE3TML5PCE"
+  apiKey: "AIzaSyD7NlL4G2h4vHCIB64ou2_-0j_yaLNNoOk",
+  authDomain: "coletacerta-446d6.firebaseapp.com",
+  projectId: "coletacerta-446d6",
+  storageBucket: "coletacerta-446d6.appspot.com",
+  messagingSenderId: "14240283751",
+  appId: "1:14240283751:web:7bff8e729e84a6918ea8c2",
+  measurementId: "G-STWT011GZR"
 };
 
-// Initialize Firebase
-const databaseApp = initializeApp(firebaseConfig);
+// initialize Firebase App
+const app = initializeApp(firebaseConfig);
 
-export default databaseApp;
+// initialize Firebase Auth for that app immediately
+const auth = initializeAuth(app, {
+  persistence: getReactNativePersistence(ReactNativeAsyncStorage)
+});
+export { auth, getApp, getAuth, getFirestore};
