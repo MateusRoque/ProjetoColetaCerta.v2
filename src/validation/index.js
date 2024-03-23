@@ -17,15 +17,13 @@ export default function formValidation(email, password, fullName, confirmPasswor
             return Alert.alert("Senha inválida", "As senhas não batem");
         }
     }
-
-    if (password.trim().length < 6) {
-        return Alert.alert("Senha inválida", "A senha deve possuir 6 ou mais caracteres");
-    }
-
     if (email.trim() === "" || !EMAIL.test(email.toLowerCase())) {
         return Alert.alert("E-mail inválido", "Informe um e-mail correto");
     }
 
+    if (password.trim().length < 6) {
+        return Alert.alert("Senha inválida", "A senha deve possuir 6 ou mais caracteres");
+    }
 
     return true
 }

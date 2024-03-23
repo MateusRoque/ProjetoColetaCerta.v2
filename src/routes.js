@@ -1,7 +1,7 @@
 import * as React from 'react';
 import WelcomePage from './screens/welcomepage';
 import Login from './screens/login';
-import Signin from './screens/signin';
+import Signin from './screens/signup';
 import Home from "./screens/home/index"
 import Denuncias from "./screens/denuncias/index"
 import { NavigationContainer } from "@react-navigation/native";
@@ -27,6 +27,7 @@ function HomeScreen() {
       <Tab.Screen
         name="Home"
         component={Home}
+
         options={{
           tabBarStyle: {
             borderTopColor: colors.whiteF2
@@ -36,7 +37,7 @@ function HomeScreen() {
           tabBarActiveTintColor: colors.outroVerd,
           tabBarIcon: ({ focused, size }) => {
             if (focused) {
-              return <Ionicons size={size} color={colors.outroVerd} name='home' />
+              return <Ionicons size={size} color={colors.outroVerd} name='home'/>
             }
             return <Ionicons size={size} color={colors.dark} name='home-outline' />
           }

@@ -6,7 +6,8 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import colors from "../../colors/colors";
 import { StatusBar } from "expo-status-bar";
 import formValidation from '../../validation';
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { AntDesign } from '@expo/vector-icons';
+import { getAuth, sendPasswordResetEmail, signInWithEmailAndPassword } from "firebase/auth";
 
 function Login({ navigation }) {
   const [userEmail, setEmail] = useState('');
@@ -22,9 +23,7 @@ function Login({ navigation }) {
     try {
       const auth = getAuth();
       signInWithEmailAndPassword(auth, userEmail, password)
-        .then((userCredential) => {
-          const user = userCredential.user;
-          
+        .then(() => {          
           navigation.replace('HomeScreen');
         })
         .catch((error) => {
@@ -35,7 +34,14 @@ function Login({ navigation }) {
     }
 
   }
-
+  const onForgotPassword = () => {
+    const auth = getAuth()
+    sendPasswordResetEmail(auth, userEmail)
+    .then(() => Alert.alert("Redefinição", "Enviamos um e-mail de redefinição de senha"))
+    .catch((error) => {
+      Alert.alert("Dados inválidos", "E-mail inválido.")
+    })
+  }
   const onFooterLinkPress = () => {
     navigation.replace('Signin')
 
@@ -87,8 +93,11 @@ function Login({ navigation }) {
                 onPress={handleLoginUser}>
                 <Text style={styles.buttonTitle}>Entrar</Text>
               </TouchableOpacity>
+
               <View style={styles.footerView}>
-                <Text style={styles.footerText}>Não tem uma conta? <Text onPress={onFooterLinkPress} style={styles.footerLink}>Cadastre-se</Text></Text>
+                <Text onPress={onFooterLinkPress} style={styles.footerLink}> <AntDesign name="adduser" size={24} color={colors.outroVerd}/> Cadastre-se </Text>
+                <View style={styles.division}/>
+                <Text onPress={onForgotPassword} style={styles.footerLink}>Esqueci a senha <AntDesign name="exclamationcircleo" size={24} color={colors.outroVerd}/></Text>
               </View>
             </View>
           </KeyboardAwareScrollView>

@@ -85,7 +85,7 @@ export default StyleSheet.create({
         marginLeft: "30%",
         marginRight: "30%",
         marginTop: 50,
-        marginBottom: 10,
+        marginBottom: 30,
         height: 48,
         borderRadius: 30,
         alignItems: "center",
@@ -96,15 +96,22 @@ export default StyleSheet.create({
         fontSize: 16,
         fontWeight: "bold"
     },
+    division: {
+        width: 3,
+        height: 60,
+        backgroundColor: colors.whiteF2
+    },
     footerView: {
         flex: 1,
+        width: "100%",
         alignItems: "center",
+        flexDirection: "row",
         justifyContent: "center",
-        borderTopColor: colors.light,
+        gap: 15,
     },
     footerText: {
         fontSize: 15,
-        color:"#2e2e2d"
+        color:"#2e2e2d",
     },
     footerLink: {
         color: colors.secondary,

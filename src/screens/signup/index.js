@@ -128,7 +128,7 @@ export default function Signin({ navigation }) {
                   underlineColorAndroid="transparent"
                   autoCapitalize="none"
                 />
-                <TouchableOpacity style={styles.iconEye} onPress={handleEyeClick}>
+                <TouchableOpacity style={styles.iconEye} onPress={handleEyeClick} >
                   <Ionicons name={changeName} color={colors.outroVerd} size={25}
                   />
                 </TouchableOpacity>
