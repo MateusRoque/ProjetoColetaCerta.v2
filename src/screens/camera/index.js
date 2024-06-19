@@ -194,7 +194,7 @@ export default function CamApp() {
           </TouchableOpacity>
           <TouchableOpacity style={styles.captureButton} onPress={takePicture}>
             <Text style={styles.captureText}>
-              <Ionicons name="camera" size={50} color="blue" />
+              <Ionicons name="camera" size={50} color="white" />
             </Text>
           </TouchableOpacity>
           <TouchableOpacity
